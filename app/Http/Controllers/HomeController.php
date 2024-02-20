@@ -1,10 +1,14 @@
-<?php 
+<?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+class HomeController extends Controller
+{
+    public function index()
+    {
+        return view('home');
+    }
+}
+
