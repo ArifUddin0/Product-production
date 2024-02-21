@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lift Keep</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* CSS for workout boxes */
+        .box {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* CSS for the "Add" button */
+        #add-workout-btn {
+            margin-top: 10px;
+        }
+    </style>
+
 </head>
 <body>
    
@@ -51,15 +66,43 @@
             </div>
         </nav>
 
-        
         <div class="container mt-4">
-     
+            <div id="workout-container">
+                
+            </div>
+            <button id="add-workout-btn" class="btn btn-primary">Add Workout</button>
         </div>
-        <!-- Main Content -->
-        
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to handle adding inputs
+        document.addEventListener('DOMContentLoaded', function () {
+            // Counter to keep track of the number of workout boxes addedd
+            let workoutCount = 0;
+
+            // Event listener for the "Add Workout" button
+            document.getElementById('add-workout-btn').addEventListener('click', function () {
+                // Increment the counter
+                workoutCount++;
+                const workoutName = prompt('Enter the name for Workout ' );
+
+                // Creates yougit  a new workout box
+                const newWorkoutBox = document.createElement('div');
+                newWorkoutBox.classList.add('box');
+               
+                newWorkoutBox.textContent = workoutName || 'Workout ' 
+
+                // Append the new workout box to the workout container
+                document.getElementById('workout-container').appendChild(newWorkoutBox);
+            });
+        });
+    </script>
+
+
 </body>
 </html>
