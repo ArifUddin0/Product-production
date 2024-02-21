@@ -12,9 +12,9 @@
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="path_to_your_logo_image" alt="Lift Keep Logo">
-                    Lift Keep
+            <a class="navbar-brand" href="#">
+             <img src="{{ public('images/Lift Keeper.png') }}" alt="Lift Keeper Logo">
+                Lift Keep
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,16 +23,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/home.blade.php" class="text-primary">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('workouts') }}">Workouts</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/workouts.blade.php" class="text-primary">Workouts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('meals') }}">Meals</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/meals.blade.php" class="text-primary">Meals</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('mykeep') }}">My Keep</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/mykeep.blade.php" class="text-primary">Mykeep</a>
                         </li>
                         <li class="nav-item">
                             <form class="form-inline my-2 my-lg-0">
@@ -41,21 +41,20 @@
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/home.blade.php" class="text-primary">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/home.blade.php" class="text-primary">Login</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Main Content -->
+        
         <div class="container mt-4">
-            @yield('content')
+        @yield('content')
         </div>
-    </x-app-layout>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

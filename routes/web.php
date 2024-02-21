@@ -1,9 +1,12 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\WorkoutsController;
+use App\Http\Controllers\MealsController;
+use App\Http\Controllers\MyKeepController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,21 +18,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/workouts', [WorkoutsController::class, 'index'])->name('workouts');
+Route::get('/meals', [MealsController::class, 'index'])->name('meals');
+Route::get('/my-keep', [MyKeepController::class, 'index'])->name('mykeep');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
