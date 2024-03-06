@@ -80,28 +80,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // JavaScript to handle adding inputs
+      
         document.addEventListener('DOMContentLoaded', function () {
-            // Counter to keep track of the number of workout boxes addedd
-            let workoutCount = 0;
-
-            // Event listener for the "Add Workout" button
+            
+            // Add workout button
             document.getElementById('add-workout-btn').addEventListener('click', function () {
-                // Increment the counter
-                workoutCount++;
                 const workoutName = prompt('Enter the name for Workout ' );
 
-                // Creates yougit  a new workout box
+                // Creates you a new workout box
                 const newWorkoutBox = document.createElement('div');
                 newWorkoutBox.classList.add('box');
                
-                newWorkoutBox.textContent = workoutName || 'Workout ' 
+                // CInput boxes for the weight sets and reps of a workout
+            const repsInput = document.createElement('input');
+            repsInput.setAttribute('type', 'number');
+            repsInput.setAttribute('placeholder', 'Reps');
 
-                // Append the new workout box to the workout container
+            const setsInput = document.createElement('input');
+            setsInput.setAttribute('type', 'number');
+            setsInput.setAttribute('placeholder', 'Sets');
+            
+            const weightInput = document.createElement('input');
+            weightInput.setAttribute('type', 'number');
+            weightInput.setAttribute('placeholder', 'weight');
+           
+
+            // Create a label for the workout name
+            const workoutLabel = document.createElement('div');
+            workoutLabel.textContent = workoutName || 'Workout ';
+
+            // Workout box layout
+            newWorkoutBox.appendChild(workoutLabel);
+            newWorkoutBox.appendChild(repsInput);
+            newWorkoutBox.appendChild(setsInput);
+            newWorkoutBox.appendChild(weightInput);
+
+                // Workout box
                 document.getElementById('workout-container').appendChild(newWorkoutBox);
             });
         });
     </script>
+
+
 
 
 </body>
