@@ -103,6 +103,24 @@
             const weightInput = document.createElement('input');
             weightInput.setAttribute('type', 'number');
             weightInput.setAttribute('placeholder', 'weight');
+
+             // Create a button to save and delete a wokrout
+                const saveButton = document.createElement('button');
+                saveButton.textContent = 'Save';
+                saveButton.classList.add('btn', 'btn-success', 'mr-2');
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.classList.add('btn', 'btn-danger');
+
+             // Event listeners for the remove and save button 
+             saveButton.addEventListener('click', function () {
+            alert('Workout saved!');
+               });
+
+             deleteButton.addEventListener('click', function () {
+            newWorkoutBox.remove();
+            });
            
 
             // Create a label for the workout name
@@ -114,6 +132,9 @@
             newWorkoutBox.appendChild(repsInput);
             newWorkoutBox.appendChild(setsInput);
             newWorkoutBox.appendChild(weightInput);
+            
+            newWorkoutBox.appendChild(saveButton);
+            newWorkoutBox.appendChild(deleteButton);
 
                 // Workout box
                 document.getElementById('workout-container').appendChild(newWorkoutBox);
