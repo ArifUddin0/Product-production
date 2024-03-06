@@ -57,4 +57,8 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+    public function showLoginForm()
+{
+    return view('auth.login');
+}
 }

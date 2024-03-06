@@ -69,7 +69,7 @@
                         <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/home.blade.php" class="text-primary">Register</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/home.blade.php" class="text-primary">Login</a>
+                        <a class="nav-link" href="http://localhost/pp/fitness-monitoring/resources/views/auth/login.blade.php" class="text-primary">Login</a>
                         </li>
                     </ul>
                 </div>
